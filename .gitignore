@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Environments
+.env
+.venv/
+venv/
+conda/
+
+# Training outputs
+logs/
+results/
+wandb/
+outputs/
+checkpoints/
+checkpoint-*/
+assets/
+figures/
+
+# Models and weights
+Qwen/
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+
+# Data and videos
+data/CLEVRER/*.json
+data/CLEVRER/train_video/*
+data/CLEVRER/validation_video/*
+data/evaluation/*.json
+data/NExTQA/videos/*
+data/STAR/*.mp4
+data/STAR/*.avi
+data/STAR/*.mov
+data/STAR/*.mkv
+!data/CLEVRER/train_video/.gitkeep
+!data/CLEVRER/validation_video/.gitkeep
+!data/NExTQA/videos/.gitkeep
+!data/STAR/.gitkeep
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.zip
+
+# LaTeX/build artifacts
+build/
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
