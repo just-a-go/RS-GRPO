@@ -217,6 +217,16 @@ DAPO, LIMR, Dr. GRPO, and GSPO are implemented on top of the GRPO branch and do 
 
 ### CLEVRER
 
+Evaluate a trained RS-GRPO checkpoint:
+
+```bash
+python src/eval/eval_clevrer.py \
+  --model_name /path/to/checkpoint \
+  --batch_size 4
+```
+
+Evaluate other models:
+
 ```bash
 export PRIVATE_DATA_ROOT=/path/to/RS-GRPO
 export EVAL_OUTPUT_ROOT=$PRIVATE_DATA_ROOT
@@ -227,15 +237,18 @@ export BATCH_SIZE=4
 bash scripts/evaluate_clevrer_main_baselines.sh
 ```
 
-Evaluate a trained RS-GRPO checkpoint:
+### NExT-GQA-Mixed
+
+Evaluate an RS-GRPO checkpoint:
 
 ```bash
-python src/eval/eval_clevrer.py \
+python src/eval/eval_general_videor1.py \
   --model_name /path/to/checkpoint \
+  --dataset_name eval_nextgqa_mixed_server \
   --batch_size 4
 ```
 
-### NExT-GQA-Mixed
+Evaluate other models:
 
 ```bash
 export PRIVATE_DATA_ROOT=/path/to/RS-GRPO
@@ -247,16 +260,18 @@ export DATASET_NAME=eval_nextgqa_mixed_server
 bash scripts/evaluate_general_main_baselines.sh
 ```
 
+### STAR-Mixed
+
 Evaluate an RS-GRPO checkpoint:
 
 ```bash
 python src/eval/eval_general_videor1.py \
   --model_name /path/to/checkpoint \
-  --dataset_name eval_nextgqa_mixed_server \
-  --batch_size 4
+  --dataset_name eval_star_mixed_server \
+  --batch_size 2
 ```
 
-### STAR-Mixed
+Evaluate other models:
 
 ```bash
 export PRIVATE_DATA_ROOT=/path/to/RS-GRPO
@@ -266,15 +281,6 @@ export BATCH_SIZE=2
 export DATASET_NAME=eval_star_mixed_server
 
 bash scripts/evaluate_general_main_baselines.sh
-```
-
-Evaluate an RS-GRPO checkpoint:
-
-```bash
-python src/eval/eval_general_videor1.py \
-  --model_name /path/to/checkpoint \
-  --dataset_name eval_star_mixed_server \
-  --batch_size 2
 ```
 
 Evaluation logs are written to:
