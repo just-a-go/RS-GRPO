@@ -115,13 +115,19 @@ Other baseline checkpoints can be placed under `Qwen/` if you want to reproduce 
 
 ## Released Checkpoint
 
-The retained CLEVRER run checkpoint is stored at:
+The CLEVRER checkpoint is tracked with Git LFS:
 
-```text
-Qwen2.5-VL-7B-Instruct_clevrer_acclearn_twgrpo_lam015_tau05/checkpoint-1000/
+```bash
+git lfs pull
 ```
 
-The earlier `checkpoint-900` snapshot was removed. Model weight shards are re-sharded into GitHub-LFS-compatible files and tracked with Git LFS, so run `git lfs pull` after cloning if the large files are not downloaded automatically.
+Use it as the model path when evaluating:
+
+```bash
+python src/eval/eval_clevrer.py \
+  --model_name Qwen2.5-VL-7B-Instruct_clevrer_acclearn_twgrpo_lam015_tau05/checkpoint-1000 \
+  --batch_size 4
+```
 
 ## Dataset Preparation
 
