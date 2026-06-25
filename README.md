@@ -269,48 +269,6 @@ python src/eval/eval_clevrer.py \
   --batch_size 4
 ```
 
-### NExT-GQA-Mixed
-
-```bash
-export PRIVATE_DATA_ROOT=/path/to/RS-GRPO
-export EVAL_OUTPUT_ROOT=$PRIVATE_DATA_ROOT
-export CUDA_VISIBLE_DEVICES=0,1
-export BATCH_SIZE=4
-export DATASET_NAME=eval_nextgqa_mixed_server
-
-bash scripts/evaluate_general_main_baselines.sh
-```
-
-Evaluate an RS-GRPO checkpoint:
-
-```bash
-python src/eval/eval_general_videor1.py \
-  --model_name /path/to/checkpoint \
-  --dataset_name eval_nextgqa_mixed_server \
-  --batch_size 4
-```
-
-### STAR-Mixed
-
-```bash
-export PRIVATE_DATA_ROOT=/path/to/RS-GRPO
-export EVAL_OUTPUT_ROOT=$PRIVATE_DATA_ROOT
-export CUDA_VISIBLE_DEVICES=0,1
-export BATCH_SIZE=2
-export DATASET_NAME=eval_star_mixed_server
-
-bash scripts/evaluate_general_main_baselines.sh
-```
-
-Evaluate an RS-GRPO checkpoint:
-
-```bash
-python src/eval/eval_general_videor1.py \
-  --model_name /path/to/checkpoint \
-  --dataset_name eval_star_mixed_server \
-  --batch_size 2
-```
-
 Evaluation logs are written to:
 
 ```text
