@@ -99,7 +99,7 @@ CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES torchrun --nproc_per_node="$NPROC_PER
     --deepspeed "$DEEPSPEED_CONFIG" \
     --output_dir "$PRIVATE_DATA_ROOT/$MODEL_NAME" \
     --model_name_or_path "$MODEL_PATH" \
-    --dataset_name xxx \
+    --dataset_name local_json \
     --jsonl_path "$JSONL_PATH" \
     --max_prompt_length "$MAX_PROMPT_LENGTH" \
     --max_completion_length "$MAX_COMPLETION_LENGTH" \
