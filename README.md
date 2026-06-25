@@ -113,6 +113,16 @@ huggingface-cli download Video-R1/Video-R1-7B \
 
 Other baseline checkpoints can be placed under `Qwen/` if you want to reproduce every comparison row. They are not required for RS-GRPO training.
 
+## Released Checkpoint
+
+The retained CLEVRER run checkpoint is stored at:
+
+```text
+Qwen2.5-VL-7B-Instruct_clevrer_acclearn_twgrpo_lam015_tau05/checkpoint-1000/
+```
+
+The earlier `checkpoint-900` snapshot was removed. Model weight shards are re-sharded into GitHub-LFS-compatible files and tracked with Git LFS, so run `git lfs pull` after cloning if the large files are not downloaded automatically.
+
 ## Dataset Preparation
 
 Only folder placeholders are included. Download each original dataset separately and place files under the paths expected by the scripts.
