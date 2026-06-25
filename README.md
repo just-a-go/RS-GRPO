@@ -213,56 +213,6 @@ LOSS_TYPE=gspo      bash scripts/rs-grpo.sh
 
 DAPO, LIMR, Dr. GRPO, and GSPO are implemented on top of the GRPO branch and do not use TW token weighting. TW-GRPO and RS-GRPO use token-level weighting.
 
-## RS-GRPO Ablations
-
-Learnability definition:
-
-```bash
-RS_LEARNABILITY_DEFINITION=full
-RS_LEARNABILITY_DEFINITION=wo_contrast
-RS_LEARNABILITY_DEFINITION=wo_unsolvedness
-RS_LEARNABILITY_DEFINITION=wo_best_quality
-RS_LEARNABILITY_DEFINITION=contrast_only
-```
-
-Group weighting rule:
-
-```bash
-RS_GROUP_WEIGHTING_RULE=hard_filter
-RS_GROUP_WEIGHTING_RULE=binary_up
-RS_GROUP_WEIGHTING_RULE=amplify_only
-RS_GROUP_WEIGHTING_RULE=conservative
-```
-
-Reward source for estimating group learnability:
-
-```bash
-RS_REWARD_SOURCE=accuracy  # accuracy reward only
-RS_REWARD_SOURCE=total     # accuracy + format reward
-```
-
-Hyperparameters:
-
-```bash
-RS_LEARNABLE_LAMBDA=0.15
-RS_LEARNABLE_TAU=0.5
-MAX_COMPLETION_LENGTH=2048
-NUM_GENERATIONS=8
-```
-
-Example:
-
-```bash
-LOSS_TYPE=rs_grpo \
-RS_LEARNABILITY_DEFINITION=full \
-RS_GROUP_WEIGHTING_RULE=conservative \
-RS_REWARD_SOURCE=accuracy \
-RS_LEARNABLE_LAMBDA=0.15 \
-RS_LEARNABLE_TAU=0.5 \
-MODEL_NAME=Qwen2.5-VL-7B-Instruct_clevrer_rs_full \
-bash scripts/rs-grpo.sh
-```
-
 ## Evaluation
 
 ### CLEVRER
@@ -331,6 +281,56 @@ Evaluation logs are written to:
 
 ```text
 logs/<dataset_name>/test/<model_name>/
+```
+
+## RS-GRPO Ablations
+
+Learnability definition:
+
+```bash
+RS_LEARNABILITY_DEFINITION=full
+RS_LEARNABILITY_DEFINITION=wo_contrast
+RS_LEARNABILITY_DEFINITION=wo_unsolvedness
+RS_LEARNABILITY_DEFINITION=wo_best_quality
+RS_LEARNABILITY_DEFINITION=contrast_only
+```
+
+Group weighting rule:
+
+```bash
+RS_GROUP_WEIGHTING_RULE=hard_filter
+RS_GROUP_WEIGHTING_RULE=binary_up
+RS_GROUP_WEIGHTING_RULE=amplify_only
+RS_GROUP_WEIGHTING_RULE=conservative
+```
+
+Reward source for estimating group learnability:
+
+```bash
+RS_REWARD_SOURCE=accuracy  # accuracy reward only
+RS_REWARD_SOURCE=total     # accuracy + format reward
+```
+
+Hyperparameters:
+
+```bash
+RS_LEARNABLE_LAMBDA=0.15
+RS_LEARNABLE_TAU=0.5
+MAX_COMPLETION_LENGTH=2048
+NUM_GENERATIONS=8
+```
+
+Example:
+
+```bash
+LOSS_TYPE=rs_grpo \
+RS_LEARNABILITY_DEFINITION=full \
+RS_GROUP_WEIGHTING_RULE=conservative \
+RS_REWARD_SOURCE=accuracy \
+RS_LEARNABLE_LAMBDA=0.15 \
+RS_LEARNABLE_TAU=0.5 \
+MODEL_NAME=Qwen2.5-VL-7B-Instruct_clevrer_rs_full \
+bash scripts/rs-grpo.sh
 ```
 
 ## Reproduction Notes
